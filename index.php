@@ -78,3 +78,6 @@
 <?php 
     include_once 'plantilla/documento-cierre.inc.php';
 ?>
+
+<!-- https://www.youtube.com/watch?v=n3yEnkFNA_E&list=PLN9W6BC54TJI6mlpAT-b7nDkpHbZp73i4&index=24	 -->
+<!-- Visual Studio Code -->
