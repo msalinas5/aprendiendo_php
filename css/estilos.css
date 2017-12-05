@@ -1,0 +1,37 @@
+body{
+    background-image: url('../img/stonehaven.png')
+}
+
+.jumbotron{
+    background-color: hsl(34, 100%, 57%);
+    color: white;
+}
+
+.panel-heading{
+    background-color: hsl(34, 100%, 57%) !important;
+    color: white !important;
+}
+
+.panel-body{
+    color: #2b2b2b !important;
+}
+
+.navbar{
+    background-color: #2b2b2b
+}
+
+.navbar-brand:link, .navbar-brand:visited{
+    color: hsl(34, 100%, 57%) !important;
+}
+
+.navbar-brand:hover, .navbar-brand:active{
+    color : white !important;
+}
+
+#navbar li a:link, #navbar li a:visited{
+color: white !important;
+}
+
+#navbar li a:hover, #navbar li a:active{
+    color:  hsl(34, 100%, 57%) !important;
+}
