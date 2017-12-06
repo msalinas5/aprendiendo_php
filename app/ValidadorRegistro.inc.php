@@ -1,4 +1,6 @@
 <?php
+include_once 'RepositorioUsuario.inc.php';
+
     class ValidadorRegistro{
 
         //ERROR CON BOOSTRAP
@@ -14,10 +16,7 @@
         private $error_clave1;
         private $error_clave2;
 
-
-
-
-        public function __construct($nombre,$email,$clave1,$clave2){
+        public function __construct($nombre,$email,$clave1,$clave2,$conexion){
 
            $this -> aviso_inicio =  "<br><div class='alert alert-danger' role='alert'>" ;
            $this -> aviso_cierre = "</div>";
@@ -26,8 +25,8 @@
             $this -> email = "";
             $this -> clave = "";
 
-            $this -> error_nombre = $this -> validar_nombre($nombre);
-            $this -> error_email = $this -> validar_email($email);
+            $this -> error_nombre = $this -> validar_nombre($conexion,$nombre);
+            $this -> error_email = $this -> validar_email($conexion,$email);
             $this -> error_clave1 = $this -> validar_clave1($clave1);
             $this -> error_clave2 = $this -> validar_clave2($clave1,$clave2);
 
@@ -44,7 +43,7 @@
             }
         }
 
-        private function validar_nombre($nombre){
+        private function validar_nombre($conexion,$nombre){
             if(!$this -> variable_iniciada($nombre)){
                 return "Debes escribir un nombre de usuario.";
             }else{
@@ -61,15 +60,23 @@
                 return "El nombre es muy largo";
             }
 
+            if(RepositorioUsuario :: nombre_existe($conexion,$nombre)){
+                return "Este nombre de usuario ya está en uso, prueba otro nombre.";
+            }
+
             return "";
         }
 
 
-        private function validar_email($email){
+        private function validar_email($conexion, $email){
             if(!$this -> variable_iniciada($email)){
                 return "Debes ingresar email";
             }else{
                 $this -> email = $email;
+            }
+
+            if(RepositorioUsuario :: email_existe($conexion,$email)){
+                return "Este email ya está en uso, por favor pruebe otro email o <a href='#'>intente recuperar su contraseña</a>.";
             }
 
             return "";

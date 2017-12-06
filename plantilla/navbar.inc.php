@@ -19,10 +19,13 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#"><span class="glyphicon glyphicon-th-list" aria-hidden="true"> Entradas</a>
+                        <a href="<?php echo RUTA_ENTRADAS ?>"><span class="glyphicon glyphicon-th-list" aria-hidden="true"> Entradas</a>
                     </li>
                     <li>
-                        <a href="#"><span class="glyphicon glyphicon-star" aria-hidden="true"> Favoritos</a>
+                        <a href="<?php echo RUTA_FAVORITOS ?>"><span class="glyphicon glyphicon-star" aria-hidden="true"> Favoritos</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo RUTA_AUTORES ?>"><span class="glyphicon glyphicon-education" aria-hidden="true"> Autores </a>
                     </li>
 
                 </ul>
@@ -35,10 +38,10 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Iniciar Sesión</a>
+                        <a href="<?php echo RUTA_LOGIN?>"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span> Iniciar Sesión</a>
                     </li>
                     <li>
-                        <a href="Registro.php"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Registro</a>
+                        <a href="<?php echo RUTA_REGISTRO?>"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Registro</a>
                     </li>
                 </ul>
             </div>
