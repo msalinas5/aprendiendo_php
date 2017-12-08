@@ -33,7 +33,7 @@ include_once 'app/config.inc.php';
     include_once 'plantilla/navbar.inc.php'
 ?>
 
- <div class="container">
+ <div class="container"> 
     <div class="jumbotron">
         <h1 class="text-center">Formulario de Registro</h1>
     </div>

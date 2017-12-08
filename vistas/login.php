@@ -3,7 +3,13 @@
     include_once 'app/config.inc.php';
     include_once 'app/Conexion.inc.php';
     include_once 'app/RepositorioUsuario.inc.php';
-    include_once 'APP/ValidadorLogin.inc.php';
+    include_once 'app/ValidadorLogin.inc.php';
+    include_once 'app/ControlSesion.inc.php';
+    include_once 'app/Redireccion.inc.php';
+
+    if(ControlSesion::sesion_iniciada()){
+        Redireccion::redirigir(SERVIDOR);
+    }
 
     if(isset($_POST['login'])){
         Conexion :: abrir_conexion();
@@ -11,12 +17,11 @@
 
         if($validador -> obtener_error() === '' && !is_null($validador -> obtener_usuario())){
             //Iniciar Sesion
+            ControlSesion::iniciar_sesion($validador->obtener_usuario() -> obtenerId(),
+                                          $validador->obtener_usuario() -> obtenerNombre());
             //redirigir a index
-            echo 'Inicio de sesión Ok';
-        }else{
-            echo 'Inicio de sesión fallo!!';
-        }
-
+            Redireccion::redirigir(SERVIDOR);            
+        } 
         Conexion::cerrar_conexion();
     }
     $titulo = "Login";
