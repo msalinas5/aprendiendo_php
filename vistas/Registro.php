@@ -22,7 +22,7 @@ include_once 'app/config.inc.php';
             
             if($usuario_insertado){
                 //Redirigir a registro-correcto
-                Redireccion::redirigir(RUTA_REGISTRO_CORRECTO. '?nombre=' . $usuario -> obtenerNombre());
+                Redireccion::redirigir(RUTA_REGISTRO_CORRECTO. '/' . $usuario -> obtenerNombre());
             }
                         Conexion :: cerrar_conexion();
         }   
@@ -65,7 +65,7 @@ include_once 'app/config.inc.php';
                     <h3 class="panel-title">Introduce tus datos</h3>
                 </div>
                 <div class="panel-body">
-                    <form role="form" method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
+                    <form role="form" method="post" action="<?php echo RUTA_REGISTRO?>">
                        <?php
                         if(isset($_POST['enviar'])){
                             include_once 'plantilla/registro_validado.inc.php';

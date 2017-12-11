@@ -41,7 +41,7 @@
                     <h4>Iniciar sesión</h4>
                 </div>
                 <div class="panel-body">
-                    <form action="<?php echo $_SERVER['PHP_SELF']?>" role="form" method="post">
+                    <form action="<?php echo RUTA_LOGIN?>" role="form" method="post">
                         <h2 class="text-center">Introduce tus datos</h2>
                         <br>
                         <label for="email" class="sr-only">Email</label>

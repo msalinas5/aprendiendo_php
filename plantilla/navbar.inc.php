@@ -17,12 +17,15 @@ $total_usuarios = RepositorioUsuario::obtener_numero_usuarios(Conexion::obtener_
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Tutorial</a>
+                <a class="navbar-brand" href="<?php echo SERVIDOR?>">Tutorial</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
+                <?php
+                     if (!ControlSesion::sesion_iniciada()) {
+                ?>
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="<?php echo RUTA_ENTRADAS ?>"><span class="glyphicon glyphicon-th-list" aria-hidden="true"> Entradas</a>
+                        <a href="<?php echo RUTA_ENTRADAS ?>"><i class="fa fa-car" aria-hidden="true"></i> Entradas</a>
                     </li>
                     <li>
                         <a href="<?php echo RUTA_FAVORITOS ?>"><span class="glyphicon glyphicon-star" aria-hidden="true"> Favoritos</a>
@@ -32,6 +35,10 @@ $total_usuarios = RepositorioUsuario::obtener_numero_usuarios(Conexion::obtener_
                     </li>
 
                 </ul>
+                <?php
+                    }
+                ?>
+                
                 <ul class="nav navbar-nav navbar-right">
                     <?php
                     if (ControlSesion::sesion_iniciada()) {
@@ -43,33 +50,13 @@ $total_usuarios = RepositorioUsuario::obtener_numero_usuarios(Conexion::obtener_
                                 </a>
                             </li>
 
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span> Gestor <span class="caret"></span>                            
+                            <li>
+                                <a href="<?php echo RUTA_GESTOR?>">
+                                <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>
+                                    Gestor
                                 </a>
-                                <ul class=" dropdown-menu">
-                                    <li>
-                                        <a href="#">
-                                                Entradas
-                                            </a>
-                                            </li>
-                                        <li>
-                                            <a href="#">
-                                                Comentarios
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Usuarios
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                Favoritos
-                                        </a>
-                                    </li>
-                                </ul>
                             </li>
+
                             <li>
                                 <a href="<?php echo RUTA_LOGOUT ?>">
                                 <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Cerrar Sesión

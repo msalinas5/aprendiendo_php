@@ -4,6 +4,7 @@ class Entrada{
 
     private $id;
     private $autor_id;
+    private $url;
     private $titulo;
     private $texto;
     private $fecha;
@@ -19,10 +20,11 @@ class Entrada{
      * @param $activa
      */
 
-    public function __construct($id, $autor_id, $titulo, $texto, $fecha, $activa)
+    public function __construct($id, $autor_id,$url, $titulo, $texto, $fecha, $activa)
     {
         $this->id = $id;
         $this->autor_id = $autor_id;
+        $this->url = $url;
         $this->titulo = $titulo;
         $this->texto = $texto;
         $this->fecha = $fecha;
@@ -36,6 +38,10 @@ class Entrada{
 
     public function  obtener_autor_id(){
         return $this -> autor_id;
+    }
+
+    public function  obtener_url(){
+        return $this -> url;
     }
 
     public function obtener_titulo(){
@@ -54,6 +60,11 @@ class Entrada{
         return $this -> activa;
     }
 
+
+    public function setUrl($url)
+    {
+        $this->url = $url;
+    }
 
     /**
      * @param mixed $titulo

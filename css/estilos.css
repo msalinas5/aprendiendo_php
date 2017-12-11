@@ -43,3 +43,49 @@ color: white !important;
 .open > a {
     background-color: #2b2b2b !important;
 }
+
+.btn-primary{
+    background-color: deepskyblue !important;
+    border:none;
+
+}
+
+.btn-primary:hover{
+    background-color: #2b2b2b !important;
+}
+
+.contenido-articulos{
+    background-color: white ;
+    padding: 2em; 
+}
+
+.sidebar{
+    background-color: white; 
+
+}
+
+.sidebar, .gg-elemento{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.gg-elemento:hover{
+    background-color: #2b2b2b !important;
+    color:orange;
+}
+
+.gg-elemento{
+    color: white;
+}
+
+#gg-entradas{
+    background-color: deepskyblue;
+}
+
+#gg-comentarios{
+    background-color: #029ac4;
+}
+
+#gg-favoritos{
+    background-color: #394a66;
+}

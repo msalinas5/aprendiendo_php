@@ -15,6 +15,7 @@
 
     <!-- AGREGANDO ESTILOS -->
     <link href="<?php echo RUTA_CSS ?>bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo RUTA_CSS ?>font-awesome.min.css" rel="stylesheet">
     <link href="<?php echo RUTA_CSS ?>estilos.css" rel="stylesheet">
 </head>
 

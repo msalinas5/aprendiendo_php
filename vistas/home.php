@@ -6,7 +6,7 @@
 
     $titulo = 'Blog de Maicol';
     include_once 'plantilla/documento-declaracion.inc.php';
-include_once 'plantilla/navbar.inc.php'
+    include_once 'plantilla/navbar.inc.php';
 
 ?>
     
@@ -77,5 +77,5 @@ include_once 'plantilla/navbar.inc.php'
     include_once 'plantilla/documento-cierre.inc.php';
 ?>
 
-<!-- https://www.youtube.com/watch?v=6bQ7XpV9PV8&index=38&list=PLN9W6BC54TJI6mlpAT-b7nDkpHbZp73i4 	 -->
-<!-- Visual Studio Code min: 25 -->
+<!-- https://www.youtube.com/watch?v=ChJBQBz7I4Q&index=49&list=PLN9W6BC54TJI6mlpAT-b7nDkpHbZp73i4  -->
+<!-- Visual Studio Code  -->

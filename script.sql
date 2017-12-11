@@ -16,6 +16,7 @@ CREATE TABLE usuarios(
 CREATE TABLE entradas(
     id INT NOT NULL UNIQUE auto_increment,
     autor_id INT NOT NULL,
+    url VARCHAR(255) NOT NULL UNIQUE,
     titulo VARCHAR(255) NOT NULL UNIQUE,
     texto TEXT CHARACTER SET utf8 NOT NULL,
     fecha DATETIME NOT NULL,

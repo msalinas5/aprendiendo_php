@@ -24,10 +24,11 @@
 
     for ($entradas = 0; $entradas< 100;$entradas++){
         $titulo = sa(10);
+        $url = $titulo;
         $texto = lorem();
         $autor = rand(1,100);
 
-        $entrada = new Entrada('',$autor,$titulo,$texto,'','');
+        $entrada = new Entrada('',$autor,$url,$titulo,$texto,'','');
         RepositorioEntrada::insertar_entrada(Conexion::obtener_conexion(),$entrada);
     }
 
