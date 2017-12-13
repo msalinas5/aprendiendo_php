@@ -111,4 +111,85 @@
             }
             return $entradas;
         }
+
+        public static function contar_entradas_activas_usuario($conexion,$id_usuario){
+            $total_entradas = '0';
+            if(isset($conexion)){
+                try{
+                    $sql = "SELECT COUNT(*) as total_entradas FROM entradas WHERE autor_id = :autor_id AND activa=1";
+                    $sentencia = $conexion -> prepare($sql);
+                    $sentencia -> bindParam(':autor_id',$id_usuario,PDO::PARAM_STR);
+                    $sentencia -> execute();
+                    $resultado = $sentencia -> fetch();
+
+                    if(!empty($resultado)){
+                        $total_entradas = $resultado['total_entradas'];
+                    }
+                }catch(PDOException $ex){
+                    print 'ERROR' . $ex -> getMessage();
+                }
+            }
+            return $total_entradas;
+        }
+
+        public static function contar_entradas_inactivas_usuario($conexion,$id_usuario){
+            $total_entradas = '0';
+            if(isset($conexion)){
+                try{
+                    $sql = "SELECT COUNT(*) as total_entradas FROM entradas WHERE autor_id = :autor_id AND activa=0";
+                    $sentencia = $conexion -> prepare($sql);
+                    $sentencia -> bindParam(':autor_id',$id_usuario,PDO::PARAM_STR);
+                    $sentencia -> execute();
+                    $resultado = $sentencia -> fetch();
+
+                    if(!empty($resultado)){
+                        $total_entradas = $resultado['total_entradas'];
+                    }
+                }catch(PDOException $ex){
+                    print 'ERROR' . $ex -> getMessage();
+                }
+            }
+            return $total_entradas;
+        }
+
+
+        public static function obtener_entradas_usuario_fecha_descendente($conexion,$id_usuario){
+            $entradas_obtenidas = [];
+            if(isset($conexion)){
+                try{
+                    $sql = "SELECT a.id,a.autor_id,a.url,a.titulo,a.texto,a.fecha,a.activa, COUNT(b.id) as 'cantidad_comentarios' FROM entradas a
+                            LEFT JOIN comentarios b ON a.id = b.entrada_id
+                            WHERE a.autor_id = :autor_id
+                            GROUP BY a.id
+                            ORDER BY a.fecha DESC";
+
+                    $sentencia =  $conexion -> prepare($sql);
+                    $sentencia -> bindParam(':autor_id',$id_usuario,PDO::PARAM_STR);
+                    $sentencia -> execute();
+                    $resultado = $sentencia -> fetchAll();
+
+                    if(count($resultado)){
+                        foreach($resultado as $fila){
+                            $entradas_obtenidas[] = array(
+                                $entradas[] = new Entrada(
+                                    $fila['id'],$fila['autor_id'],$fila['url'],
+                                    $fila['titulo'],$fila['texto'],$fila['fecha'],
+                                    $fila['activa']
+                                ),
+                                $fila['cantidad_comentarios']
+                            );
+
+                        }
+                    }
+                }catch(PDOException $ex){
+                    print 'ERROR'.$ex -> getMessage();
+                }
+            }
+            return $entradas_obtenidas;
+        }
+
+
+        /*
+         *
+         */
     }

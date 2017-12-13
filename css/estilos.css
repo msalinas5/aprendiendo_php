@@ -89,3 +89,41 @@ color: white !important;
 #gg-favoritos{
     background-color: #394a66;
 }
+
+.parte-gestor-entradas{
+    background-color: deepskyblue;
+    color: white;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th{
+    background-color: #029ac4;
+}
+
+.table-striped>tbody>tr>td{
+    border: none;
+}
+
+.table>thead>tr>th{
+    border: none !important;
+}
+
+tbody:before{
+    content: "-";
+    display: block;
+    line-height: 1em;
+    color: transparent;
+}
+
+#boton-nueva-entrada{
+    background-color:#029ac4 !important;
+}
+
+#boton-nueva-entrada:hover{
+    background-color: #2b2b2b !important;
+}
+
+.form-nueva-entrada{
+    background-color: white;
+    padding: 2em;
+}

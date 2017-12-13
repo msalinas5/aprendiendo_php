@@ -42,6 +42,10 @@ include_once  'app/RepositorioUsuario.inc.php';
                 break;
                 case 'relleno-maicol':
                 $ruta_elegida = "vistas/script-relleno.php";
+                break;
+                case 'nueva_entrada':
+                    $ruta_elegida = "vistas/nueva_entrada.php";
+                    break;
             }
         }else if(count($partes_ruta) == 3){
             if($partes_ruta[1]=='registro-correcto'){

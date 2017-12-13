@@ -17,6 +17,7 @@
     define("RUTA_GESTOR_ENTRADAS",RUTA_GESTOR."/entradas");
     define("RUTA_GESTOR_COMENTARIOS",RUTA_GESTOR."/comentarios");
     define("RUTA_GESTOR_FAVORITOS",RUTA_GESTOR."/favoritos");
+    define("RUTA_NUEVA_ENTRADA",SERVIDOR."/nueva_entrada");
 
     //RECURSOS
     define("RUTA_CSS",SERVIDOR."/css/");

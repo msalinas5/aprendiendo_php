@@ -9,8 +9,6 @@
     include_once 'plantilla/navbar.inc.php';
 
 ?>
-    
-
     <div class="container">
         <div class="jumbotron">
             <h1>Blog de Maicol</h1>
@@ -77,5 +75,5 @@
     include_once 'plantilla/documento-cierre.inc.php';
 ?>
 
-<!-- https://www.youtube.com/watch?v=ChJBQBz7I4Q&index=49&list=PLN9W6BC54TJI6mlpAT-b7nDkpHbZp73i4  -->
+<!-- https://www.youtube.com/watch?v=Qsx1laRiV6Y&index=53&list=PLN9W6BC54TJI6mlpAT-b7nDkpHbZp73i4  -->
 <!-- Visual Studio Code  -->
